@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IconButton, InputBase, makeStyles, Paper } from '@material-ui/core';
 import { Search as SearchIcon } from '@material-ui/icons';
+import { useRouter } from 'next/dist/client/router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,11 +28,14 @@ const useStyles = makeStyles((theme) => ({
 const SearchInput = (): JSX.Element => {
   const classes = useStyles();
 
+  const router = useRouter();
+
   const [search, setSearch] = useState('');
 
   const handleSubmit = (event: any) => {
-    // TODO: Send to search route
     event.preventDefault();
+
+    router.push(`/?q=${search}`);
   };
 
   return (
