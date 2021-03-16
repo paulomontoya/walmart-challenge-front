@@ -83,9 +83,9 @@ const Search: FunctionComponent<Props> = ({ searchResults, error }) => {
       <Container className={classes.container}>
         {error && <Typography>{error}</Typography>}
 
-        <Grid container spacing={6}>
+        <Grid container spacing={3}>
           {searchResults.map((result) => (
-            <Grid key={result.sku} item xs={3} className={classes.item}>
+            <Grid key={result.sku} item xs={12} sm={3} className={classes.item}>
               <Typography>{result.brand}</Typography>
 
               <div className={classes.image}>

@@ -7,6 +7,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     background: theme.palette.primary.light,
     padding: theme.spacing(2),
+  },
+  form: {
+    width: '100%',
     display: 'flex',
     justifyContent: 'center',
   },
@@ -14,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
     padding: '2px 4px',
     display: 'flex',
     alignItems: 'center',
-    width: 400,
+    maxWidth: '100%',
+    width: 600,
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -40,7 +44,7 @@ const SearchInput = (): JSX.Element => {
 
   return (
     <div className={classes.root}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={classes.form}>
         <Paper className={classes.search}>
           <InputBase
             className={classes.input}
